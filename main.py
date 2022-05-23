@@ -41,7 +41,7 @@ time_now = int(time_now.split(" ")[1].split(":")[0])
 if time_now >= sunset and time_now <= sunrise:
     night = True
 else:
-    night = True
+    night = False
 
 # Determine if ISS within latitude and longitude of 5 from current location
 lat_prox = abs(abs(MY_LAT) - abs(iss_latitude))
@@ -50,7 +50,7 @@ long_prox = abs(abs(MY_LONG) - abs(iss_longitude))
 if lat_prox <= 5 and lat_prox <= 5:
     near = True
 else:
-    near = True
+    near = False
 
 # Send email if night time
 # Will repeat every 60s until out of specified area or daytime
